@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\contactsController;
+use App\Http\Controllers\Controller;
+use App\Http\Livewire\ChatWith;
+use App\Http\Livewire\Contacts;
 use App\Http\Livewire\Posts;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',Posts::class);
-
-
-
-
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/',Contacts::class)->name('contacts');
+    Route::get('/chat-with/{uuid}',ChatWith::class)->name('chat_with');
+});
 
 
 

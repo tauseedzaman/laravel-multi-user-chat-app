@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'uuid',
+        'image'
     ];
 
     /**
@@ -45,7 +47,7 @@ class User extends Authenticatable
 
     public function friends()
     {
-        return $this->belongsToMany('User', 'friend_user', 'user_id', 'friend_id');
+        return $this->HasMany(User::class);
     }
 
     /**
@@ -56,6 +58,12 @@ class User extends Authenticatable
     public function chats(): HasMany
     {
         return $this->hasMany(Chat::class);
+    }
+
+    public function last_message($user)
+    {
+        return "wow this is amazing";
+        // return $this->where('frind_id',$user)->
     }
 
 

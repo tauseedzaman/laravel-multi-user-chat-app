@@ -1,0 +1,297 @@
+* {
+    font-family: sans-serif;
+  }
+  a {
+    text-decoration: none;
+  }
+  :root {
+    --body-background: rgb(253, 251, 251);
+  }
+  input,
+  textarea,
+  select,
+  button {
+    font-family: Mulish, sans-serif;
+    letter-spacing: -0.24px;
+    -webkit-font-smoothing: antialiased;
+    color: rgb(6, 19, 43);
+  }
+  .chat-body {
+    display: flex;
+    /* height: ; */
+    height: calc(100vh - 48px);
+    min-height: 300px;
+    box-shadow: 0px 22px 30px 0px rgba(89, 82, 182, 0.2);
+    border-radius: 1rem;
+    margin: auto;
+    /* position: fixed; */
+    /* right: 50%; */
+    /* left: 50%; */
+    flex-direction: column;
+    width: 402px;
+
+    /* clip-path: circle(0% at 100% 100%); */
+  }
+
+  .chat-box-header {
+    background: linear-gradient(
+      135deg,
+      rgb(42, 39, 218) 0%,
+      rgb(0, 162, 255) 100%
+    );
+    width: 100%;
+    height: 100px;
+    flex: 0 0 auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .chat-box-content {
+    flex: 1;
+    width: 100%;
+    overflow: auto;
+  }
+  .chat-box-content::-webkit-scrollbar {
+    width: 10px;
+  }
+  .chat-box-content::-webkit-scrollbar-track {
+    background-color: rgba(197, 190, 190, 0.664);
+  }
+  .chat-box-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgb(42, 39, 218), rgb(33, 172, 207));
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  .chat-box-footer {
+    background-color: var(--body-background);
+    width: 100%;
+    height: 73px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    flex: 0 0 auto;
+  }
+  #text-box {
+    border: 0px;
+    margin-top: 3px;
+    font-size: 16px;
+    resize: none;
+    line-height: 24px;
+    overflow: hidden;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding-top: 8px;
+    padding-left: 7px;
+    margin-left: -10px;
+  }
+  #text-box:focus {
+    border: 0px;
+    outline: 0px;
+  }
+  .input-group {
+    padding: 10px 28px 6px;
+  }
+  .conversation-group {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+  }
+  .message-box {
+    background: rgb(231, 233, 238);
+    color: rgb(6, 19, 43);
+  }
+  .message {
+    padding: 1px 10px;
+    margin-bottom: 4px;
+    border-radius: 15px;
+    overflow-wrap: break-word;
+    width: max-content;
+    max-width: 90%;
+    font-size: 16px;
+  }
+  hr {
+    margin: 0px;
+    border-width: 0px 0px 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(163, 169, 179);
+  }
+  .send {
+    background: linear-gradient(
+      135deg,
+      rgb(42, 39, 218) 0%,
+      rgb(33, 172, 207) 100%
+    );
+    margin-left: auto;
+    color: white;
+    padding-right: 11px;
+    border-radius: 15px;
+    width: max-content;
+    max-width: 90%;
+  }
+  .recived {
+    margin-right: auto;
+    padding-right: 11px;
+    border-radius: 15px;
+    width: max-content;
+    max-width: 90%;
+  }
+  .file-and-smile-icons {
+    width: 6%;
+    fill: rgb(42, 39, 218);
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-top: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  .submit-button {
+    width: 9%;
+    fill: white;
+    background: rgb(42, 39, 218);
+    border: none;
+    padding: 8px;
+    box-shadow: 1px 1px 6px blue;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+    margin-top: -23px;
+    margin-right: 12px;
+  }
+  .poweredby {
+    color: darkgray;
+    text-align: center;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: -10px;
+    font-size: 18px;
+  }
+  .poweredby b {
+    color: rgba(22, 22, 20, 0.486);
+    font-size: 18px;
+    font-weight: bolder;
+  }
+  .employee {
+    width: 60px;
+    height: 60px;
+    /* padding-top: 15px; */
+    /* padding-left: 25px; */
+    margin-top: 20px;
+    margin-left: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .employee-name {
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 0px;
+    align-items: center;
+    margin-top: -50px;
+    margin-left: -80px;
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: inherit;
+    font-family: sans-serif;
+  }
+  .top-right-menu-icons {
+    height: 100px;
+    margin-top: -25px;
+    width: 25px;
+    fill: white;
+    float: right;
+    margin-right: 60px;
+    cursor: pointer;
+  }
+  .top-right-menu-last-icons {
+    fill: white !important;
+    height: 100px;
+    margin-top: -25px;
+    width: 25px;
+    float: right;
+    margin-right: -55px;
+    cursor: pointer;
+  }
+  .top-right-menu-icons svg {
+    fill: whitesmoke;
+  }
+  .chat-button {
+    box-shadow: 1px 1px 10px 1px rgb(39, 39, 160);
+    border-radius: 35%;
+    fill: white;
+    border: none;
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    height: 2rem;
+    width: 2rem;
+    padding: 10px;
+    background-color: #5200ff;
+    cursor: pointer;
+  }
+
+  .animate-Chat {
+    animation: growCircle 0.3s forwards ease-in-out;
+  }
+  @keyframes growCircle {
+    from {
+      clip-path: circle(0% at 100% 100%);
+    }
+    to {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
+  .close-chat {
+    animation: removeCircle 0.1s forwards ease-in;
+  }
+  @keyframes removeCircle {
+    from {
+      clip-path: circle(100% at 50% 50%);
+    }
+    to {
+      clip-path: circle(0% at 100% 100%);
+    }
+  }
+
+  .contact {
+      position: relative;
+    padding: 5px;
+    margin-bottom: 4px;
+    border-radius: 15px;
+    overflow-wrap: break-word;
+    /* width: 100%; */
+    font-size: 16px;
+    margin-right: auto;
+    padding-right: 11px;
+    background: linear-gradient(
+      135deg,
+      rgb(42, 39, 218) 0%,
+      rgb(33, 172, 207) 100%
+    );
+    margin-left: auto;
+    color: white;
+    max-width: 95%;
+
+  }
+  .contact_name{
+      position: relative;
+      padding-left: 60px;
+      top:-6px ;
+  }
+
+  .contact_image{
+      width: 50px;
+      position: absolute;
+      height: 50px;
+      border-radius: 50%;
+  }
+  .contact_last_chat{
+      position: absolute;
+      left: 75px;
+      bottom: 10px;
+      color: rgb(187, 159, 159);
+      margin-top: -10px;
+  }
+  .contact_last_chat_time{
+      position: absolute;
+      right: 10px;
+      bottom: 2px;
+      margin-top: -10px;
+  }
