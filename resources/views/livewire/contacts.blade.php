@@ -21,16 +21,19 @@
     </div>
     <div class="chat-box-content">
         <div class="conversation-group">
-            @foreach ($users as $user)
-            <a href="{{  route('chat_with',$user->uuid) }}">
+            @forelse ($contacts as $user)
+            @if ($user->user->id != auth()->id())
+            <a href="{{  route('chat_with',$user->user->uuid) }}">
                 <div class="contact">
-                    <img class="contact_image" src="{{ $user->image }}" alt="" />
-                    <p class="contact_name">{{ $user->name }}</p>
-                    <div class="contact_last_chat">{{ dd($user->friends) }}</div>
+                    <img class="contact_image" src="{{ $user->user->image }}" alt="" />
+                    <p class="contact_name">{{ $user->user->name }}</p>
                     <div class="contact_last_chat_time">12:00</div>
                 </div>
             </a>
-            @endforeach
+            @endif
+            @empty
+            <center>no data found</center>
+            @endforelse
         </div>
     </div>
 </div>

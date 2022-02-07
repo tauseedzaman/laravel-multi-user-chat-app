@@ -1,6 +1,8 @@
 <div>
     <ul>
         @foreach ($users as $user)
+        @if ($user->id != auth()->id())
+            {{-- do nothing do not display my slef --}}
             <li class="bg-green-500 " style=" margin-top: 10px; ">
                 <div class=" p-3 shadow bg-red-600 flex">
                     <div class=" flex flex-shrink">
@@ -14,6 +16,7 @@
                     </a>
                 </div>
             </li>
+            @endif
         @endforeach
     </ul>
 </div>
