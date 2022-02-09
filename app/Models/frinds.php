@@ -12,6 +12,7 @@ class frinds extends Model
     protected $table='friend';
     protected $fillable=[
         'user_id',
+        'chat_id',
         'friend_id'
     ];
 

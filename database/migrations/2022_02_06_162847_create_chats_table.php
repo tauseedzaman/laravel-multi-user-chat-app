@@ -17,6 +17,7 @@ class CreateChatsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->text('message');
+            $table->uuid('chat_id');
             $table->integer('friend_id')->unsigned();
             $table->timestamps();
         });
