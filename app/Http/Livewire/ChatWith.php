@@ -18,7 +18,6 @@ class ChatWith extends Component
 
     public function send_message()
     {
-        // dd(frinds::where(['user_id' => auth()->id(), 'friend_id' => $this->user->id])->count() === 0 || frinds::where(['user_id' => $this->user->id, 'friend_id' => auth()->id()])->count() === 0);
         $this->validate(['message' => "required"]);
 
 
@@ -40,7 +39,6 @@ class ChatWith extends Component
 
 
         if (frinds::where(['user_id' => auth()->id(), 'friend_id' => $this->user->id])->count() === 0 || frinds::where(['user_id' => $this->user->id, 'friend_id' => auth()->id()])->count() === 0) {
-            // if()
             $uuid = Str::uuid();
             frinds::create([
                 'user_id' => auth()->id(),
@@ -57,15 +55,7 @@ class ChatWith extends Component
     }
     public function render()
     {
-        // dd((chat::where(['user_id' => auth()->id(),'friend_id' => $this->user->id])->Orwhere(['friend_id' => auth()->id(),'user_id' => $this->user->id])->get()));
-        // dd(chat::where('chat_id',frinds::where(['user_id'=>auth()->id(), 'friend_id' =>$this->user->id])->first()->chat_id)->latest()->get());
-
-
-        // dd(chat::where('chat_id','6f8e5f02-db67-446f-8364-8935e11788ac')->latest()->get());
-
-        // dd(chat::where(['user_id' => auth()->id(),'friend_id' => $this->user->id,])->get());
         return view('livewire.chat-with',[
-            // select the chat where my id maches to user id or friend id
             'messages' => chat::where('chat_id',frinds::where(['user_id'=>auth()->id(), 'friend_id' =>$this->user->id])->first()->chat_id)->get()
                     ])->layout('layouts.main');
 

@@ -11,9 +11,8 @@ class Contacts extends Component
 {
     public function render()
     {
-        // dd(frinds::where('friend_id', auth()->id())->get());
         return view('livewire.contacts',[
-            'contacts' => frinds::where("friend_id",auth()->id())->get()
+            'contacts' => frinds::where("friend_id",auth()->id())->latest()->get()
         ])->layout('layouts.main');
     }
 }
