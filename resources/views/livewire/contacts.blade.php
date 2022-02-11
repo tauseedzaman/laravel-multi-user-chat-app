@@ -21,7 +21,7 @@
             </a>
         </div>
     </div>
-    <div class="chat-box-content">
+    <div class="chat-box-content" wire:poll.keep-alive>
         <div class="conversation-group">
             @forelse ($contacts as $user)
                 @if ($user->user->id != auth()->id())

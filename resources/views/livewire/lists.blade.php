@@ -1,5 +1,5 @@
 <div>
-    <ul>
+    <ul wire:poll.keep-alive>
         @foreach ($users as $user)
         @if ($user->id != auth()->id())
             {{-- do nothing do not display my slef --}}
